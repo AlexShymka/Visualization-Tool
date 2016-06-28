@@ -6,8 +6,8 @@
 <body>
 	<p>
       <?php
-						echo "The Foundation for the visualization tool!";
-						?>
+		echo "The Foundation for the visualization tool!";
+		?>
 		
 	
 	
