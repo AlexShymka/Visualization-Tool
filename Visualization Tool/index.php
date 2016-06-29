@@ -1,3 +1,6 @@
+<?php 
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,14 +10,17 @@
 	<p>
       <?php
 		echo "The Foundation for the visualization tool!";
+		
+		$_SESSION['name']= '';
+		$_SESSION['pword'] = '';
 		?>
 		
 	
-	
-	<form action="welcome.php" method="post">
-		Name: <input type="text" name="name"><br> E-mail: <input type="text"
-			name="email"><br> <input type="submit" value="Go">
+		</p>
+	<form action="connect.php" method="post">
+		UserName: <input type="text" name="name"><br> Password: <input type="text"
+			name="pword"><br> <input type="submit" value="Go">
 	</form>
-	</p>
+
 </body>
 </html>
