@@ -1,3 +1,6 @@
+<?php 
+seesion_start();
+?>
 <html>
 <body>
 	<?php
