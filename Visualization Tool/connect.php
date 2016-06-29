@@ -1,5 +1,5 @@
 <?php 
-seesion_start();
+session_start();
 ?>
 
 <?php
@@ -15,8 +15,9 @@ seesion_start();
 		die('Could not connect: ' . mysqli_error($conn));
 	}
 	
-	$sql = 'SELECT username FROM users'.
-			'WHERE username= '.$name;
+	$sql = 'SELECT username, password FROM users '.
+			'WHERE username= '.'"'.$name.'"';
+	echo $sql;
 	$retval = mysqli_query( $conn, $sql);
 	if(! $retval ) {
 		die('Could not get data: ' . mysqli_error($conn));
@@ -30,9 +31,9 @@ seesion_start();
 		header('Location: welcome.php');
 		exit;
 	}else{
-		$sql = "INSERT INTO users '.
-      '(username, password) '.
-      'VALUES ('$name', '$pword')";
+		$sql = "INSERT INTO users ".
+      "(username, password) ".
+      "VALUES ('$name', '$pword')";
 		$Qinput = mysqli_query($conn, $sql);
 		if(! $Qinput) {
 			die('Could not enter data: ' . mysqli_error($conn));

@@ -1,12 +1,12 @@
 <?php 
-seesion_start();
+session_start();
 ?>
 <html>
 <body>
 	<?php
 	
-$name = $_POST ["name"];
-	$email = $_POST ["email"];
+	$name = $_SESSION["name"];
+	$email = $_SESSION["pword"];
 	?>
 		Welcome <?php echo $name; ?><br>
 		Your email address is: <?php echo $email; ?>
