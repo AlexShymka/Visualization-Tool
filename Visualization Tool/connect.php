@@ -17,7 +17,6 @@ session_start();
 	
 	$sql = 'SELECT username, password FROM users '.
 			'WHERE username= '.'"'.$name.'"';
-	echo $sql;
 	$retval = mysqli_query( $conn, $sql);
 	if(! $retval ) {
 		die('Could not get data: ' . mysqli_error($conn));
