@@ -9,12 +9,9 @@ session_start();
 <body>
 <div id ="topbar">
 		
-		<?php //$_SESSION['name']= '';
-		//$_SESSION['pword'] = ''
-		?>
 		<a>
 		<?php
-		if($_SESSION['name'] == ''){
+		if(!isset($_SESSION['name'])){
 			echo "<a href='login.php'> Login/ Sign up </a>";
 		}else{
 			echo "<a href='welcome.php'> My Account </a>";
