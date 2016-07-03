@@ -8,30 +8,22 @@ session_start();
 </head>
 <body>
 <div id ="topbar">
-		
-		<?php //$_SESSION['name']= '';
-		//$_SESSION['pword'] = ''
-		?>
-		<a>
+		<p>
 		<?php
 		if($_SESSION['name'] == ''){
 			echo "<a href='login.php'> Login/ Sign up </a>";
 		}else{
 			echo "<a href='welcome.php'> My Account </a>";
 		}
-			?></a></div>
-	<div style="margin:100px auto 0;">
-		<p>
-      <?php
-		echo "The Foundation for the visualization tool! <br>";
-		?>
-		Storytelling <br>
-		Uncertainty<br>
-		Collaboration<br>
-		</p>
-		</div>
-		
-
+			?>
+			</p></div>
+		<div style="margin:100px auto 0;">
+	<form action="connect.php" method="post">
+		UserName: <input type="text" name="name"><br> Password: <input type="text"
+			name="pword"><br> <input type="submit" value="Go">
+	</form>
+	<br>
+	</div>
 
 </body>
 </html>
