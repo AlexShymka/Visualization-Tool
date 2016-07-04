@@ -1,17 +1,20 @@
 <?php 
+session_start();
+
 require_once ('jpgraph-4.0.0/src/jpgraph.php');
 require_once ('jpgraph-4.0.0/src/jpgraph_line.php');
 require_once ('jpgraph-4.0.0/src/jpgraph_bar.php');
- 
-$ydata = array_map('intval', explode(',', $_GET['data']));
-//echo $_GET['data'];
+
+
+
+
+if (!empty($_SESSION['data'])){
+	$ydata = array_map('intval', explode(',', $_SESSION['data']));
+} else{
+	$ydata = array(0);
+}
+
 $xaxis = array(1,2,3,4,5,6);
-// if(! $_GET['data']){
-// 	$ydata = array(1,5,3,6,2,4);
-// }
-// else{
-// 	$ydata = array_map('intval', explode(",", $_GET['data']));
-// }
 
 
  
@@ -30,7 +33,7 @@ $graph->SetScale('intint');
 $graph->title->Set('example');
  
 // Setup titles and X-axis labels
-$graph->xaxis->title->Set('x axis');
+$graph->xaxis->title->Set('x');
  
 // Setup Y-axis title
 $graph->yaxis->title->Set('Y axis');
@@ -45,5 +48,9 @@ $graph->Add($lineplot);
  
 // Display the graph
 $graph->Stroke();
+
+//$graphpic ="imagefile.png";
+//$graph->img->Stream($graphpic);
  
+//print '<img src="'.$graphpic.'"/>';
 ?>

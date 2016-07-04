@@ -8,7 +8,7 @@ session_start();
 </head>
 <body>
 <div id ="topbar">
-		<p>
+		<p style="float: right; margin-right:2%;">
 		<?php
 		if(!isset($_SESSION['name'])){
 			echo "<a href='login.php'> Login/ Sign up </a>";
