@@ -10,7 +10,7 @@ session_start();
 		<div id ="topbar">
 		<p style="float: right; margin-right:2%;">
 		<?php
-		if($_SESSION['name'] == ''){
+		if(!isset($_SESSION['name'])){
 			echo "<a href='login.php'> Login/ Sign up </a><br>";
 		}else{
 			echo "<a href='welcome.php'> My Account </a><br>";

@@ -9,6 +9,11 @@ session_start();
 	$name = $_POST ["name"];
 	$pword = $_POST ["pword"];
 	
+	if ( $name =='' or $pword == ''){
+		echo 'You must fill in both Username and password';
+		exit();
+	}
+	
 	$conn = mysqli_connect('localhost', $dbuser, $dbpass, 'test');
 	
 	if(! $conn ) {
