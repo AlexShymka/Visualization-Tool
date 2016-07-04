@@ -33,7 +33,7 @@ session_start();
 		$_SESSION['name']= $name;
 		$_SESSION['pword'] = $pword;
 		header('Location: welcome.php');
-		exit;
+		exit();
 	}else{
 		$sql = "INSERT INTO users ".
       "(username, password) ".
@@ -45,7 +45,7 @@ session_start();
 			$_SESSION['name']= $name;
 			$_SESSION['pword'] = $pword;
 			header('Location: welcome.php');
-			exit;
+			exit();
 		}
 	}
 
